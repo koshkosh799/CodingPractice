@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.meal-planner-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Inter', Arial, sans-serif;
+  background: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  color: #111;
+  position: relative;
+  z-index: 1;
+}
+
+body, #root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  animation: bg-gradient-move 10s ease-in-out infinite alternate;
+}
+
+@keyframes bg-gradient-move {
+  0% {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  }
+  25% {
+    background: linear-gradient(135deg, #f9d423 0%, #ff5e62 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #a1ffce 0%, #fbc2eb 100%);
+  }
+  75% {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  }
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #2d7d46;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.main-btn:disabled {
+  background: #b2b2b2;
+  cursor: not-allowed;
+}
+.main-btn:not(:disabled):hover {
+  background: #256a3a;
+}
+
+.meal-plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.day-card {
+  background: #f6f8fa;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  color: #111;
+}
+.day-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #111;
+}
+.day-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.day-card li {
+  margin-bottom: 0.25rem;
+  font-size: 0.98rem;
+  color: #111;
+}
+
+.grocery-section {
+  margin-top: 2rem;
+  color: #111;
+}
+.grocery-list, .cost-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem 0;
+  color: #111;
+}
+.grocery-list li, .cost-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 1rem;
+  color: #111;
+}
+.cost-list li strong {
+  color: #2d7d46;
+}
+
+.error {
+  color: #b00020;
+  background: #ffeaea;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Debug panel: remove background and border for a cleaner look */
+.meal-planner-container .debug-panel {
+  background: none;
+  border: none;
+  color: #111;
+}
+
+@media (max-width: 600px) {
+  .meal-planner-container {
+    padding: 0.5rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .main-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  .day-card {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+.rainbow-title {
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ff5e62, #ff9966, #f9d423, #a1ffce, #38f9d7, #43e97b, #38f9d7, #a1ffce, #f9d423, #ff9966, #ff5e62);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-title {
+  animation: wave 2.5s infinite linear;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  10% { transform: translateY(-8px) rotate(2deg); }
+  20% { transform: translateY(-12px) rotate(-2deg); }
+  30% { transform: translateY(-8px) rotate(2deg); }
+  40% { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(0px) rotate(-2deg); }
+}
+
+.flan-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.flan-bounce {
+  animation: flan-bounce 2s infinite cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes flan-bounce {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-10px); }
+  40%  { transform: translateY(0); }
+  60%  { transform: translateY(-6px); }
+  80%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.flan-burger-highlight {
+  font-weight: bold;
+  color: #ff8800;
+  background: #fff3e0;
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+  margin-left: 0.2em;
+}
+
+.flan-day-subtitle {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ff8800;
+  margin-left: 0.5em;
+  font-weight: 600;
+}
+
+.meal-plan-emojis {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+} 
